@@ -1,0 +1,33 @@
+Song:
+  name: string
+  year_released: string
+
+Artist:
+  name: string
+
+User:
+  email: string
+  password: string
+  name: string
+  zip_code: integer
+
+Question:
+  text: string
+  song_id: integer
+  artist_id: integer
+
+Choice:
+  question_id: integer
+  song_id: integer
+  text: string
+
+Answer:
+  question_id: integer
+  choice_id: integer
+  song_id: integer
+
+Review:
+  song_id: integer
+  user_id: integer
+  rating: integer
+  body: text
