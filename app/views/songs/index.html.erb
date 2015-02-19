@@ -1,8 +1,12 @@
 <h1>#SeekHarmony</h1>
 
 <table class="table">
+<% @songs = Song.all %>
+
   <%@songs.each do |song| %>
     <tr>
     <td><a href="/songs/<%= song.id %>"><%= song.name %></a></td>
     </tr>
 <% end %>
+
+<%= link_to 'New song', new_song_path %>

@@ -1,9 +1,11 @@
 Song:
   name: string
   year_released: string
+  artist: string
 
 Artist:
   name: string
+  song: string
 
 User:
   email: string
