@@ -5,6 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+puts "Deleting all records from the database..."
+Song.delete_all
+Artist.delete_all
+Question.delete_all
+
 puts "Creating songs..."
 alone = Song.create(name: "Alone", year_released: "2008")
 go_get_on_the_floor = Song.create(name: "Go Get on the Floor - Extended Club Remix", year_released: "2010")
@@ -24,3 +29,5 @@ Question.create(text: "Is it interesting to you that the artist wrote this song 
 Question.create(text: "Is it interesting to you that the artist founded an arts education nonprofit while on tour in 2010?", song_id: you_should_know.id, artist_id: davis.id)
 Question.create(text: "Is it interesting to you that the artist credits fellow Ivy-Leaguer John Legend as a creative influence?", song_id: she_dont_have_to_know.id, artist_id: davis.id)
 Question.create(text: "Is it interesting to you that the artist re-arrangned this Beyonce hit to reflect his jazz training?", song_id: dangerously_in_love_two.id, artist_id: davis.id)
+
+
