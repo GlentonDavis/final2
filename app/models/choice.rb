@@ -1,3 +1,4 @@
 class Choice < ActiveRecord::Base
-belongs_to :questions
+  belongs_to :questions
 end
+  

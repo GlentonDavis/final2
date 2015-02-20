@@ -19,6 +19,7 @@ dangerously_in_love_two = Song.create(name: "Dangerously In Love Part 2", year_r
 
 puts "Creating artists..."
 davis = Artist.create(name: "Glenton Davis")
+media = Artist.create(name: "MediaSoulPop")
 
 puts "Creating questions..."
 Question.create(text: "How would you describe this artist's voice?", song_id: alone.id, song_id: go_get_on_the_floor.id, song_id: you_should_know.id, song_id: she_dont_have_to_know.id, song_id: dangerously_in_love_two.id, artist_id: davis.id)

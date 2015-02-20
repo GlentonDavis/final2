@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
+    t.string "song"
   end
 
   create_table "choices", force: :cascade do |t|
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "songs", force: :cascade do |t|
     t.string "name"
     t.string "year_released"
+    t.string "artist"
   end
 
   create_table "users", force: :cascade do |t|
