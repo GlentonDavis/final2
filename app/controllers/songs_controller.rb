@@ -1,8 +1,7 @@
 class SongsController <ApplicationController
 
   def index
-    @songs = Song.all
-    
+    @songs = Song.all    
   end
 
   def show
@@ -15,8 +14,12 @@ class SongsController <ApplicationController
 
   def create
     song_params = params.require(:song).permit!
-    Song.create(song_params)
-    redirect_to songs_path
+      @song = Song.create(song_params)
+    if @song.valid?
+      redirect_to songs_path
+    else
+      render text: "FAIL"
+    end
   end
 
   def edit

@@ -1,11 +1,12 @@
 Song:
   name: string
   year_released: string
-  artist: string
+  artist_id: integer
 
 Artist:
   name: string
   song: string
+  song_id: integer
 
 User:
   email: string

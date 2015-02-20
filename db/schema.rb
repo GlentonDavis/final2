@@ -24,9 +24,12 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "answers", ["song_id"], name: "index_answers_on_song_id"
 
   create_table "artists", force: :cascade do |t|
-    t.string "name"
-    t.string "song"
+    t.string  "name"
+    t.string  "song"
+    t.integer "song_id"
   end
+
+  add_index "artists", ["song_id"], name: "index_artists_on_song_id"
 
   create_table "choices", force: :cascade do |t|
     t.integer "question_id"
@@ -57,10 +60,12 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "songs", force: :cascade do |t|
-    t.string "name"
-    t.string "year_released"
-    t.string "artist"
+    t.string  "name"
+    t.string  "year_released"
+    t.integer "artist_id"
   end
+
+  add_index "songs", ["artist_id"], name: "index_songs_on_artist_id"
 
   create_table "users", force: :cascade do |t|
     t.string  "email"
