@@ -8,9 +8,13 @@ Artist:
   song: string
   song_id: integer
 
+Owner:
+  song_id: integer
+  artist_id: integer
+
 User:
   email: string
-  password: string
+  password_digest: string
   name: string
   zip_code: integer
 

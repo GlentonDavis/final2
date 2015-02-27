@@ -40,6 +40,14 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "choices", ["question_id"], name: "index_choices_on_question_id"
   add_index "choices", ["song_id"], name: "index_choices_on_song_id"
 
+  create_table "owners", force: :cascade do |t|
+    t.integer "song_id"
+    t.integer "artist_id"
+  end
+
+  add_index "owners", ["artist_id"], name: "index_owners_on_artist_id"
+  add_index "owners", ["song_id"], name: "index_owners_on_song_id"
+
   create_table "questions", force: :cascade do |t|
     t.string  "text"
     t.integer "song_id"
@@ -69,9 +77,9 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table "users", force: :cascade do |t|
     t.string  "email"
-    t.string  "password"
     t.string  "name"
     t.integer "zip_code"
+    t.string  "password_digest"
   end
 
 end
