@@ -2,39 +2,41 @@ Song:
   name: string
   year_released: string
   artist_id: integer
+  answer: string
+
+Survey:
+  name: string
+
+Question:
+  text: string
+  song_id: integer
+  survey_id: integer
 
 Artist:
   name: string
-  song: string
-  song_id: integer
-
-Owner:
-  song_id: integer
-  artist_id: integer
 
 User:
   email: string
   password_digest: string
   name: string
-  zip_code: integer
+  #answer: string
 
-Question:
-  text: string
-  song_id: integer
-  artist_id: integer
+#Choice:
+  #question_id: integer
+  #song_id: integer
+  #text: string
 
-Choice:
-  question_id: integer
-  song_id: integer
-  text: string
+#Answer:
+  #question_id: integer
+  #choice_id: integer
+  #song_id: integer
 
-Answer:
-  question_id: integer
-  choice_id: integer
-  song_id: integer
+#Review:
+  #song_id: integer
+  #user_id: integer
+  #rating: integer
+  #body: text
 
-Review:
-  song_id: integer
-  user_id: integer
-  rating: integer
-  body: text
+#Owner:
+  #song_id: integer
+  #artist_id: integer
