@@ -68,9 +68,23 @@
               <li><%=link_to "Songs", songs_path %></li>
               <li><%=link_to "Artists", artists_path %></li>
               <li><%=link_to "Users", users_path %></li>
-              <li><%=link_to "Create New Song", new_song_path %></li>
           </ul>
-
+            <li>
+              <% if current_user %>
+                <a href="#">
+                  <i class="fa fa-user"></i>
+                  Hi, <%= current_user.try(:name) %>
+                </a>
+              <% else %>
+                <%= link_to "Log In", login_path %>
+              <% end %>
+            </li>
+            <li>
+              <% if current_user %>
+                <%= link_to "Log Out", logout_path %>
+              <% end %>
+            </li>
+          </ul>
         </div>
       </nav>
     </div>

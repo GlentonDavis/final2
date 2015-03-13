@@ -1,6 +1,11 @@
 <table class="table">
 <% @songs = Song.all %>
 
+<div class="jumbotron">
+  <br><br><br><br><br>
+    <h1>tempo</h1>
+</div>
+
 <div class="row">
   <% @songs.each do |song| %>
     <div class="col-sm-6 col-md-4">

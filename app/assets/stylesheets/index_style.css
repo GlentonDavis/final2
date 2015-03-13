@@ -1,0 +1,8 @@
+.jumbotron {
+  background: url('Rhythm_in_my_head_by_f_law.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.jumbotron h1 {
+  color: white;
+}
