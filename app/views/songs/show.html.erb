@@ -6,29 +6,4 @@
 
 <p>Artist: <%= @song.artist.name %></p>
 
-<h3>Take a quick poll</h3>
-
-<%= form_for @song do |form| %>
-  <div class="form-group">
-    <%= form.label :Content %>
-    <%= form.text_field :answer, class: "form-control" %>
-  </div>
-
-  <div class="radio">
-    <%= form.label :Content %>
-      <label>
-        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-    Text 1
-      </label>
-  </div>
-
-  <div class="radio">
-    <label>
-      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-      Text 2
-    </label>
-  </div>
-
-<%= form.button 'Submit', class: "btn btn-success" %>
-
-<% end %>
+<h3><%= link_to "Take a quick Survey", new_song_survey_path(@song) %></h3>

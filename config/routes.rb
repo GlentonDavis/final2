@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
 
-    resources :songs
+    resources :songs do
+      resources :surveys
+    end
     resources :artists
     resources :users
+    resources :sessions
+
+    get "/login", to: "sessions#new"
     
     root to: 'songs#index'
 

@@ -1,0 +1,9 @@
+<h1>Take a Survey</h1>
+
+<%= form_for [@song, @survey] do |form| %>
+  <div class="form-group">
+    <%= form.label :How_Would_You_Describe_the_Artists_Voice? %>
+    <%= form.select :rating, ["Good", "Bad"], class: "form-control" %>
+  </div>
+  <%= form.button 'Post Your Feedback', class: "btn btn-success" %>
+<% end %>

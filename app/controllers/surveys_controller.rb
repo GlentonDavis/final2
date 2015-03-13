@@ -1,39 +1,22 @@
 class SurveysController < ApplicationController
-
-  def index
-    @survey = Survey.all
-  end
-
-  def show
-    @survey = Survey.find_by(id: params["id"])
-    @questions = @survey.questions
-  end
+  before_action :find_song
 
   def new
     @survey = Survey.new
   end
 
   def create
-    survey_params = params.require(:survey).permit(:name)
-    Survey.create(survey_params)
-    redirect_to surveys_path
+    survey_params = params.require(:survey).permit(:rating)
+    @survey = @song.surveys.new(survey_params)
+    @survey.user = current_user
+    if @survey.save
+      redirect_to @song, notice: "Thanks for answering the survey!"
+    else
+      render "new"
+    end
   end
 
-  def edit
-    @survey = Survey.find_by(id: params["id"])
+  def find_song
+    @song = Song.find_by(id: params["song_id"])
   end
-
-  def update
-    survey_params = params.require(:survey).permit(:name)
-    @survey = Survey.find_by(id: params["id"])
-    @survey.update(survey_params)
-    redirect_to surveys_path
-  end
-
-  def destroy
-    @survey = Survey.find_by(id: params["id"])
-    @survey.destroy
-    redirect_to surveys_path
-  end
-
 end
